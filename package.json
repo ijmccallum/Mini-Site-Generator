@@ -6,6 +6,7 @@
     "build": "node build.js"
   },
   "devDependencies": {
-    "fs": "0.0.1-security"
+    "fs": "0.0.1-security",
+    "html-minifier": "^3.5.8"
   }
 }

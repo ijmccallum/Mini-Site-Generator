@@ -9,13 +9,16 @@
 
 
 const fs = require('fs');
+const minify = require('html-minifier').minify;
 
 fs.readdir('./', (err, files) => {
   files.forEach(file => {
     if (file.indexOf('.page.js') !== -1) {
         console.log(file);
         let page = require('./' + file);
-        let markup = page();
+        let markup = minify(page(), {
+            collapseWhitespace: true
+        });
         let filename = file.replace('.page.js', '.html');
         fs.writeFile("./" + filename, markup, function(err) {
             if(err) {
