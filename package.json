@@ -1,0 +1,8 @@
+{
+  "name": "marvelously-minimal",
+  "version": "0.0.0",
+  "description": "A small shower idea - just use js template string literals to generate a static site.",
+  "scripts": {
+    "build": ""
+  }
+}
