@@ -1,5 +1,5 @@
 # Marvelously Minimal
 
-Static site generator using template string literals.
+A small shower idea - just use js template string literals to generate a static site.
 
-filename.js => filename.html
+filename.page.js => filename.html
