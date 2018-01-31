@@ -16,7 +16,14 @@ fs.readdir('./', (err, files) => {
         console.log(file);
         let page = require('./' + file);
         let markup = page();
-        console.log('markup: ', markup);
+        let filename = file.replace('.page.js', '.html');
+        fs.writeFile("./" + filename, markup, function(err) {
+            if(err) {
+                return console.log(err);
+            }
+        
+            console.log("The file was saved!");
+        }); 
     }
   });
 })
