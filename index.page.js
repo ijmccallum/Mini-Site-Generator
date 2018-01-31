@@ -1,6 +1,6 @@
-import data from './index.data.js';
+let data = require('./index.data.js');
 
-export default function(){
+module.exports = function(){
     return `
         <!DOCTYPE html>
         <html lang="en">
