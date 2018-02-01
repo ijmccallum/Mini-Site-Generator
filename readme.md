@@ -1,6 +1,6 @@
 # Marvelously Minimal Static Site Generator
 
-Give it a starting point, eg `./docs`. It'll look for any file with &le;filename&gt;.page.js, run it, and save the returned value to &le;filename&gt;.html
+Give it a starting point, eg `./docs`. It'll look for any file with `&lt;filename&gt;.page.js`, run it, and save the returned value to `&lt;filename&gt;.html`
 
 TODO
 
