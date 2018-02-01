@@ -18,7 +18,7 @@ would turn into
 
 ```
 .docs
-├──*index.html*
+├──index.html
 ├──index.page.js
 ├──about.html
 ├──about.page.js
