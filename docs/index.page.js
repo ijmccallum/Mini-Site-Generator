@@ -1,5 +1,6 @@
 let data = require('./index.data.js');
 //index file in the root for github pages
+
 module.exports = function(){
     return `
         <!DOCTYPE html>

@@ -9,10 +9,9 @@
 
 
 const fs = require('fs');
-const { join } = require('path');
 const minify = require('html-minifier').minify;
 const minOps = {collapseWhitespace: true};
-const entry = './docs';
+const entry = './docs/'; //end in a slash
 
 const enterDirectory = function(dir){
     fs.readdir(dir, (err, files) => {

@@ -7,7 +7,6 @@
   },
   "devDependencies": {
     "fs": "0.0.1-security",
-    "html-minifier": "^3.5.8",
-    "path": "^0.12.7"
+    "html-minifier": "^3.5.8"
   }
 }
