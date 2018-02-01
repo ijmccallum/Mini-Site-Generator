@@ -9,24 +9,38 @@
 
 
 const fs = require('fs');
+const { join } = require('path');
 const minify = require('html-minifier').minify;
+const minOps = {collapseWhitespace: true};
+const entry = './docs';
 
-fs.readdir('./', (err, files) => {
-  files.forEach(file => {
-    if (file.indexOf('.page.js') !== -1) {
-        console.log(file);
-        let page = require('./' + file);
-        let markup = minify(page(), {
-            collapseWhitespace: true
-        });
-        let filename = file.replace('.page.js', '.html');
-        fs.writeFile("./" + filename, markup, function(err) {
-            if(err) {
-                return console.log(err);
+const enterDirectory = function(dir){
+    fs.readdir(dir, (err, files) => {
+        files.forEach((file) => {
+            if (isDirectory(dir + file)) {
+                if (file == 'node_modules' || 
+                    file == '.git') { return; }
+                enterDirectory(dir + file + '/');
             }
-        
-            console.log("The file was saved!");
-        }); 
-    }
-  });
-})
+
+            if (file.indexOf('.page.js') !== -1) {
+                buildFile(dir, file);
+            }
+        });
+    });
+}
+
+const buildFile = function(dir, file){
+    let page = require(dir + file);
+    let markup = minify(page(), minOps);
+    let filename = file.replace('.page.js', '.html');
+    fs.writeFile(dir + filename, markup, function(err) {
+        if(err) { return console.log(err); }
+    }); 
+}
+
+const isDirectory = function(source){
+    return fs.lstatSync(source).isDirectory();
+}
+
+enterDirectory('./');
