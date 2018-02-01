@@ -8,17 +8,17 @@ Give it a starting point, eg `./docs`. It'll look for any file with `<filename>.
 
 ```
 .docs
-+--index.page.js
-+--about.page.js
-+--funFolder
-|  +--fun.page.js
+├──index.page.js
+├──about.page.js
+├──funFolder
+|  ├──fun.page.js
 ```
 
 would turn into
 
 ```
 .docs
-├──index.html
+├──*index.html*
 ├──index.page.js
 ├──about.html
 ├──about.page.js
