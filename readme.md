@@ -5,3 +5,5 @@ Give it a starting point, eg `./docs`. It'll look for any file with `<filename>.
 TODO
 
  - [ ] a11y linting... pa11y?
+ - [ ] get entry from command line
+ - [ ] multiple entry points

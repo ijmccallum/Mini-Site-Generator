@@ -43,4 +43,4 @@ const isDirectory = function(source){
     return fs.lstatSync(source).isDirectory();
 }
 
-enterDirectory('./');
+enterDirectory(entry);
