@@ -6,17 +6,26 @@ Give it a starting point, eg `./docs`. It'll look for any file with `<filename>.
 
 ## High level example
 
-/docs
- - index.page.js
- - about.page.js
+```
+.docs
++--index.page.js
++--about.page.js
++--funFolder
+|  +--fun.page.js
+```
 
 would turn into
 
-/docs
- - index.html
- - index.page.js
- - about.html
- - about.page.js
+```
+.docs
+├──index.html
+├──index.page.js
+├──about.html
+├──about.page.js
+├──funFolder
+|  ├──fun.html
+|  ├──fun.page.js
+```
 
 ---
 
@@ -45,6 +54,34 @@ the `html` tag allows editors to apply html syntax highlighting. Different edito
  - Atom does it automatically?
  - Sublime???
  - Another editor???
+
+---
+
+## How does it work?
+
+I'm glad you asked - time for sudocode!
+
+```
+//pass it a directory
+goIntoFolder(folder){
+
+    //get all the .page.js files
+    pages = getAll(.page.js)
+    
+    pages.forEach(page){
+        //run them and save the result into an html file of the same name
+        page() => page.html
+    }
+
+    //now get all the folders in this folder
+    folders = getAll(folders)
+
+    folders.forEach(folder){
+        //go into each of them and do the same thing
+        goIntoFolder(folder)
+    }
+}
+```
 
 ---
 
