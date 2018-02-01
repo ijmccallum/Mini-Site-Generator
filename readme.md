@@ -1,8 +1,6 @@
-# Marvelously Minimal
+# Marvelously Minimal Static Site Generator
 
-A small shower idea - just use js template string literals to generate a static site.
-
-filename.page.js => filename.html
+Give it a starting point, eg `./docs`. It'll look for any file with <filename>.page.js, run it, and save the returned value to <filename>.html
 
 TODO
 
