@@ -3,10 +3,30 @@ const minify = require('html-minifier').minify;
 const minOps = {collapseWhitespace: true};
 
 //A list of directories in which to run the build
-const puts = [
-    { in: './docs/', out: './docs/' },
-    { in: './example2/src/', out: './example2/dist/' }
-]; //all must end in a slash
+const puts = [];
+
+function testPut(put, label){
+    if (put.substr(put.length - 1) !== '/') {
+        throw new Error('Mini Site Generator: ' +label+ ' should end with a "/" Got:' +put);
+    }
+    return put;
+}
+
+for (let j = 0; j < process.argv.length; j++) {  
+    //if we find an -io, the next 2 args should be for us! input output!
+    if (process.argv[j] == '-io') {
+        var input = testPut(process.argv[j + 1], 'input');
+        var output = testPut(process.argv[j + 2], 'output');
+        puts.push({
+            in: input,
+            out: output
+        });
+        j+=2;
+    }
+}
+if (puts.length == 0) {
+    throw new Error('Mini Site Generator: no input / output directory passed in. For example: npm run build -io ./docs/ ./docs/')
+}
 
 function errorHandler(err){
     if (err) { console.log('err', err); }
@@ -145,9 +165,6 @@ function stepIntoDir(dir, siteConfig){
  * Iterate over every given input / output!
  * This is the beginning :)
  */
-for (let j = 0; j < process.argv.length; j++) {  
-    console.log(j + ' -> ' + (process.argv[j]));
-}
 puts.forEach(function(put){
     stepIntoDir(put.in, put);
 });
