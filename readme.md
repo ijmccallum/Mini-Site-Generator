@@ -6,7 +6,7 @@ Make a file, `index.page.js`:
 
 ```js
 module.exports = function(){
-    return `<p>tada!</p>`;
+    return '<p>tada!</p>';
 }
 ```
 
@@ -21,7 +21,7 @@ Simple! The page.js file exports a function that returns a string. That string i
 
 ## Defining src & dist folders
 
-Pass in the relative paths of your source and distribution folders with the `-io flag`, "in" first "out" second
+Pass in the relative paths of your source and distribution folders with the `-io` flag, "in" first "out" second
 
 ```
 npm run build -io ./src/ ./dist/
@@ -79,24 +79,6 @@ would turn into
 ```
 
 _You can even run both: `npm run build -io ./src/ ./dist/ -io ./docs/ ./docs/`_
-
----
-
-## Low level example
-
-Inside a `<filename>.page.js` file
-```js
-module.exports = function(){
-    return html`
-        <p>Anything goes!</p>
-        <p>It's just JavaScript so you can do whatever you want.</p>
-        <p>Like import data from another file, or even an API!</p>
-        <p>Go on. Live your dreams. You're in Neverland now.</p>
-    `; 
-}
-```
-
-_Note the html tag isn't doing anything fancy for the code, it's just there to give the editor a heads up to use html syntax highlighting. Speaking of which..._
 
 ---
 
