@@ -10,7 +10,7 @@ npm run build
 
 ## High level example
 
-For the `./docs` and `./docs` idea
+For the `./docs` to `./docs` idea
 
 ```
 .docs
@@ -24,12 +24,12 @@ would turn into
 
 ```
 .docs
-├──index.html
+├──index.html  - Hello!
 ├──index.page.js
-├──about.html
+├──about.html  - hello
 ├──about.page.js
 ├──funFolder
-|  ├──fun.html
+|  ├──fun.html  - HELLO!!
 |  ├──fun.page.js
 ```
 
@@ -38,7 +38,7 @@ would turn into
 ## Low level example
 
 inside a `<filename>.page.js` file
-```
+```js
 module.exports = function(){
     return html`
         <p>Anything goes!</p>
@@ -53,7 +53,7 @@ _Note the html tag isn't doing anything fancy for the code, it's just there to g
 
 ---
 
-## syntax highlighting
+## Syntax Highlighting
 the `html` tag allows editors to apply html syntax highlighting. Different editors will need different things to get this going:
 
  - VS Code requires a plugin: https://marketplace.visualstudio.com/items?itemName=bierner.lit-html
@@ -67,7 +67,7 @@ the `html` tag allows editors to apply html syntax highlighting. Different edito
 
 I'm glad you asked - time for sudocode!
 
-```
+```js
 //pass it a directory
 goIntoFolder(folder){
 
@@ -89,11 +89,11 @@ goIntoFolder(folder){
 }
 ```
 
-_The actual code is a little different, have a read I you wish!_
+_The actual code is a little different, have a read if you wish!_
 
 ---
 
 ## TODOs
 
  - [ ] a11y linting... pa11y? - do it in an example, not in this base
- - [ ] get entry from command line (npm scripts!)
+ - [ ] get entry from command line (npm scripts!) (in progress!)
