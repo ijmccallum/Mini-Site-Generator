@@ -1,5 +1,7 @@
 # Mini Site Generator
 
+>Because I just wanted a really simple static site generator.
+
 Give it an input directory, and an output directory. eg `./src` and `./dist` (or even `./docs` and `./docs`). It'll look for any files with `<filename>.page.js`, run it (it's just javascript afterall) then save the returned value to `<filename>.html`. 
 
 ```
@@ -37,7 +39,7 @@ would turn into
 
 ## Low level example
 
-inside a `<filename>.page.js` file
+Inside a `<filename>.page.js` file
 ```js
 module.exports = function(){
     return html`
@@ -54,7 +56,7 @@ _Note the html tag isn't doing anything fancy for the code, it's just there to g
 ---
 
 ## Syntax Highlighting
-the `html` tag allows editors to apply html syntax highlighting. Different editors will need different things to get this going:
+The `html` tag allows editors to apply html syntax highlighting. Different editors will need different things to get this going:
 
  - VS Code requires a plugin: https://marketplace.visualstudio.com/items?itemName=bierner.lit-html
  - Atom does it automatically?
