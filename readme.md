@@ -10,7 +10,7 @@ module.exports = function(){
 }
 ```
 
-Now run the build, `npm run build`:
+Now run the build, `npm run msg`:
 
 `index.html`:
 ```html
@@ -24,7 +24,7 @@ Simple! The page.js file exports a function that returns a string. That string i
 Pass in the relative paths of your source and distribution folders with the `-io` flag, "in" first "out" second:
 
 ```
-npm run build -io ./src/ ./dist/
+npm run msg -io ./src/ ./dist/
 ```
 
 Before: 
@@ -56,7 +56,7 @@ After:
 Alternativly you may wish to keep your source and distribution files together. Just pass the same value twice: 
 
 ```
-npm run build -io ./docs/ ./docs/
+npm run msg -io ./docs/ ./docs/
 ```
 
 Before:
@@ -82,7 +82,7 @@ After:
 |  ├──fun.page.js
 ```
 
-_You can even run both: `npm run build -io ./src/ ./dist/ -io ./docs/ ./docs/`_
+_You can even run both: `npm run msg -io ./src/ ./dist/ -io ./docs/ ./docs/`_
 
 ---
 

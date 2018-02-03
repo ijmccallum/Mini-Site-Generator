@@ -3,9 +3,15 @@
   "version": "1.0.1",
   "description": "A marvelously minimal static site generator.",
   "keywords": [
-    "node",
-    "heroku",
-    "express"
+    "static",
+    "file",
+    "site",
+    "website",
+    "generator",
+    "minimal",
+    "simple",
+    "javascript",
+    "easy"
   ],
   "author": "Iain J McCallum",
   "main": "build.js",
@@ -15,6 +21,9 @@
   },
   "scripts": {
     "build": "node build.js -io ./docs/ ./docs/ -io ./example2/src/ ./example2/dist/"
+  },
+  "bin": {
+    "msg": "./build.js"
   },
   "dependencies": {
     "html-minifier": "^3.5.8"
