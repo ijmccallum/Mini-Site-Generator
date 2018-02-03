@@ -114,7 +114,7 @@ goIntoFolder(folder){
         //run the "page"
         markup = page()
         //save the result
-        saveToDist(markup);
+        saveToDist(markup)
     }
 
     //now get all the folders in this folder
