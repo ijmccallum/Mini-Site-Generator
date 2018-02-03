@@ -107,20 +107,22 @@ I'm glad you asked - time for sudocode!
 //pass it a directory
 goIntoFolder(folder){
 
-    //get all the .page.js files
-    pages = getAll(.page.js)
+    //get all the .page.js files in this directory
+    pages = getAllPagesFrom(folder)
     
     pages.forEach(page){
-        //run them and save the result into an html file of the same name
-        page() => page.html
+        //run the "page"
+        markup = page()
+        //save the result
+        saveToDist(markup);
     }
 
     //now get all the folders in this folder
-    folders = getAll(folders)
+    folderChildren = getAllFoldersFrom(folder)
 
-    folders.forEach(folder){
+    folderChildren.forEach(childFolder){
         //go into each of them and do the same thing
-        goIntoFolder(folder)
+        goIntoFolder(childFolder)
     }
 }
 ```
