@@ -1,7 +1,18 @@
 {
   "name": "mini-site-generator",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A marvelously minimal static site generator.",
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "author": "Iain J McCallum",
+  "main": "build.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ijmccallum/Mini-Site-Generator"
+  },
   "scripts": {
     "build": "node build.js -io ./docs/ ./docs/ -io ./example2/src/ ./example2/dist/"
   },
