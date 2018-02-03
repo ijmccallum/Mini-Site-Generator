@@ -1,10 +1,16 @@
-# Marvelously Minimal Static Site Generator
+# Mini Site Generator
 
-Give it a starting point, eg `./docs`. It'll look for any file with `<filename>.page.js`, run it, and save the returned value to `<filename>.html`
+Give it an input directory, and an output directory. eg `./src` and `./dist` (or even `./docs` and `./docs`). It'll look for any files with `<filename>.page.js`, run it (it's just javascript afterall) then save the returned value to `<filename>.html`. 
+
+```
+npm run build
+```
 
 ---
 
 ## High level example
+
+For the `./docs` and `./docs` idea
 
 ```
 .docs
@@ -83,11 +89,11 @@ goIntoFolder(folder){
 }
 ```
 
+_The actual code is a little different, have a read I you wish!_
+
 ---
 
 ## TODOs
 
- - [ ] a11y linting... pa11y?
- - [ ] get entry from command line
- - [ ] multiple entry points... is it needed? Many microsites... yeah, go for it!
- - [ ] default "inline" files, or give a dist folder to render to (keep in mind multiple entries)
+ - [ ] a11y linting... pa11y? - do it in an example, not in this base
+ - [ ] get entry from command line (npm scripts!)
