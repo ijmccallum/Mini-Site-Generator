@@ -3,7 +3,7 @@
 Give it an input directory, and an output directory. eg `./src` and `./dist` (or even `./docs` and `./docs`). It'll look for any files with `<filename>.page.js`, run it (it's just javascript afterall) then save the returned value to `<filename>.html`. 
 
 ```
-npm run build
+npm run build -io ./docs/ ./docs/ -io ./example2/src/ ./example2/dist/
 ```
 
 ---
@@ -96,4 +96,4 @@ _The actual code is a little different, have a read if you wish!_
 ## TODOs
 
  - [ ] a11y linting... pa11y? - do it in an example, not in this base
- - [ ] get entry from command line (npm scripts!) (in progress!)
+ - [ ] what needs to go in to publish this?
