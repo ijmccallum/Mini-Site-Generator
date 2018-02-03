@@ -2,17 +2,60 @@
 
 >Because I just wanted a really simple static site generator.
 
-Give it an input directory, and an output directory. eg `./src` and `./dist` (or even `./docs` and `./docs`). It'll look for any files with `<filename>.page.js`, run it (it's just javascript afterall) then save the returned value to `<filename>.html`. 
+Make a file, `index.page.js`:
+
+```js
+module.exports = function(){
+    return `<p>tada!</p>`;
+}
+```
+
+Now run the build, `npm run build`:
+
+`index.html`:
+```html
+<p>tada!</p>
+```
+
+Simple! The page.js file exports a function that returns a string. That string is then saved into a .html file of the same name. Because the page file is just JavaScript, you can do pretty much anything you want in there!
+
+## Defining src & dist folders
+
+Pass in the relative paths of your source and distribution folders with the `-io flag`, "in" first "out" second
 
 ```
-npm run build -io ./docs/ ./docs/ -io ./example2/src/ ./example2/dist/
+npm run build -io ./src/ ./dist/
 ```
 
----
+```
+.dist
+.src
+├──index.page.js
+├──about.page.js
+├──funFolder
+|  ├──fun.page.js
+```
 
-## High level example
+would turn into 
 
-For the `./docs` to `./docs` idea
+```
+.dist
+├──index.html
+├──about.html
+├──funFolder
+|  ├──fun.html
+.src
+├──index.page.js
+├──about.page.js
+├──funFolder
+|  ├──fun.page.js
+```
+
+Alternativly you may wish to keep your source and distribution files together. Just pass the same value twice: 
+
+```
+npm run build -io ./docs/ ./docs/
+```
 
 ```
 .docs
@@ -35,6 +78,8 @@ would turn into
 |  ├──fun.page.js
 ```
 
+_You can even run both: `npm run build -io ./src/ ./dist/ -io ./docs/ ./docs/`_
+
 ---
 
 ## Low level example
@@ -56,12 +101,15 @@ _Note the html tag isn't doing anything fancy for the code, it's just there to g
 ---
 
 ## Syntax Highlighting
-The `html` tag allows editors to apply html syntax highlighting. Different editors will need different things to get this going:
+Different editors do this in different ways. VS Code requires [a plugin](https://marketplace.visualstudio.com/items?itemName=bierner.lit-html), Atom does not (according to a quick google). However it happens, in most cases you will need to add the `html` tag:
 
- - VS Code requires a plugin: https://marketplace.visualstudio.com/items?itemName=bierner.lit-html
- - Atom does it automatically?
- - Sublime???
- - Another editor???
+```js
+module.exports = function(){
+    return html`
+        <p>Me Syntax is Higlighted!</p>
+    `; 
+}
+```
 
 ---
 

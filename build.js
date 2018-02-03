@@ -1,9 +1,9 @@
 const fs = require('fs');
 const minify = require('html-minifier').minify;
 const minOps = {collapseWhitespace: true};
-
-//A list of directories in which to run the build
-const puts = [];
+const filters = ['node_modules'];
+let puts = [];
+const defaultPuts = [{in:'./', out:'./'}];
 
 function testPut(put, label){
     if (put.substr(put.length - 1) !== '/') {
@@ -25,7 +25,7 @@ for (let j = 0; j < process.argv.length; j++) {
     }
 }
 if (puts.length == 0) {
-    throw new Error('Mini Site Generator: no input / output directory passed in. For example: npm run build -io ./docs/ ./docs/')
+    puts = defaultPuts;
 }
 
 function errorHandler(err){
@@ -74,6 +74,26 @@ function folders(addresses){
  */
 function contents(dir){
     return fs.readdirSync(dir);;
+}
+
+/**
+ * Takes an array of items (strings)
+ * Returns all those that do not match filters
+ */
+function filterContents(items, filters){
+    var filteredItems = [];
+    items.forEach(function(item){
+        var didPass = true;
+        filters.forEach(function(filter){
+            if (filter === item) {
+                didPass = false;
+            }
+        });
+        if (didPass) {
+            filteredItems.push(item);
+        }
+    });
+    return filteredItems;
 }
 
 /**
@@ -147,7 +167,7 @@ function ensureFolderAddress(folderAddress){
  * Passes each folder to itself.
  */
 function stepIntoDir(dir, siteConfig){
-    var dirContents = contents(dir);
+    var dirContents = filterContents(contents(dir), filters);
 
     var pageList = pages(dirContents);
     var pageAddressList = contentAddresses(dir, pageList);
