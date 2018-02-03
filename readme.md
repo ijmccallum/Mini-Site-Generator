@@ -101,7 +101,7 @@ module.exports = function(){
 
 ## How does it work?
 
-I'm glad you asked - time for sudocode!
+I'm glad you asked! Time for sudocode.
 
 ```js
 //pass it a directory
@@ -127,7 +127,7 @@ goIntoFolder(folder){
 }
 ```
 
-_The real code is a little different, but that's the essence of it. Have a read if you wish!_
+_The real code is a little different, but that's the essence of it. [Have a read if you wish!](https://github.com/ijmccallum/Mini-Site-Generator/blob/master/build.js)_
 
 ---
 
