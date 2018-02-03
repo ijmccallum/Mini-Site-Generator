@@ -130,8 +130,3 @@ goIntoFolder(folder){
 _The real code is a little different, but that's the essence of it. [Have a read if you wish!](https://github.com/ijmccallum/Mini-Site-Generator/blob/master/build.js)_
 
 ---
-
-## TODOs
-
- - [ ] a11y linting... pa11y? - do it in an example, not in this base
- - [ ] what needs to go in to publish this?
