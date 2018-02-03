@@ -1,6 +1,6 @@
 {
   "name": "mini-site-generator",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "A marvelously minimal static site generator.",
   "keywords": [
     "static",
@@ -23,7 +23,7 @@
     "build": "node build.js -io ./docs/ ./docs/ -io ./example2/src/ ./example2/dist/"
   },
   "bin": {
-    "msg": "./build.js"
+    "msg": "./bin/msg"
   },
   "dependencies": {
     "html-minifier": "^3.5.8"
