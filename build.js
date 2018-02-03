@@ -5,7 +5,7 @@ const minOps = {collapseWhitespace: true};
 //A list of directories in which to run the build
 const puts = [
     { in: './docs/', out: './docs/' },
-    { in: './example 2/src/', out: './example 2/dist/' }
+    { in: './example2/src/', out: './example2/dist/' }
 ]; //all must end in a slash
 
 function errorHandler(err){
@@ -145,6 +145,9 @@ function stepIntoDir(dir, siteConfig){
  * Iterate over every given input / output!
  * This is the beginning :)
  */
+for (let j = 0; j < process.argv.length; j++) {  
+    console.log(j + ' -> ' + (process.argv[j]));
+}
 puts.forEach(function(put){
     stepIntoDir(put.in, put);
 });
