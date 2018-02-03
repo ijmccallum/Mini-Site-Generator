@@ -21,33 +21,35 @@ Simple! The page.js file exports a function that returns a string. That string i
 
 ## Defining src & dist folders
 
-Pass in the relative paths of your source and distribution folders with the `-io` flag, "in" first "out" second
+Pass in the relative paths of your source and distribution folders with the `-io` flag, "in" first "out" second:
 
 ```
 npm run build -io ./src/ ./dist/
 ```
 
+Before: 
+
 ```
-.dist
-.src
+./dist/
+./src/
 ├──index.page.js
 ├──about.page.js
-├──funFolder
+├──/funFolder/
 |  ├──fun.page.js
 ```
 
-would turn into 
+After:
 
 ```
-.dist
+./dist/
 ├──index.html
 ├──about.html
-├──funFolder
+├──/funFolder/
 |  ├──fun.html
-.src
+./src/
 ├──index.page.js
 ├──about.page.js
-├──funFolder
+├──/funFolder/
 |  ├──fun.page.js
 ```
 
@@ -57,23 +59,25 @@ Alternativly you may wish to keep your source and distribution files together. J
 npm run build -io ./docs/ ./docs/
 ```
 
+Before:
+
 ```
-.docs
+./docs/
 ├──index.page.js
 ├──about.page.js
-├──funFolder
+├──/funFolder/
 |  ├──fun.page.js
 ```
 
-would turn into
+After:
 
 ```
-.docs
+./docs/
 ├──index.html  - Hello!
 ├──index.page.js
 ├──about.html  - hello
 ├──about.page.js
-├──funFolder
+├──/funFolder/
 |  ├──fun.html  - HELLO!!
 |  ├──fun.page.js
 ```
@@ -88,7 +92,7 @@ Different editors do this in different ways. VS Code requires [a plugin](https:/
 ```js
 module.exports = function(){
     return html`
-        <p>Me Syntax is Higlighted!</p>
+        <p>Me Syntax be Higlighted!</p>
     `; 
 }
 ```
@@ -121,7 +125,7 @@ goIntoFolder(folder){
 }
 ```
 
-_The actual code is a little different, have a read if you wish!_
+_The real code is a little different, but that's the essence of it. Have a read if you wish!_
 
 ---
 
