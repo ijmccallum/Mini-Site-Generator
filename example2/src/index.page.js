@@ -1,5 +1,5 @@
 module.exports = function(){
-    return `
+    return html`
         <!DOCTYPE html>
         <html lang="en">
         <head>

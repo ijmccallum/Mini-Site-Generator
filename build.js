@@ -188,6 +188,13 @@ function stepIntoDir(dir, siteConfig){
     });
 };
 
+//stop the string template literal html tag from throwing an undefined
+if (typeof html == 'undefined') {
+    html = function(i){
+        return String(i);
+    }
+}
+
 /**
  * Iterate over every given input / output!
  * This is the beginning :)
