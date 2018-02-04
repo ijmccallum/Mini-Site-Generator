@@ -97,6 +97,8 @@ module.exports = function(){
 }
 ```
 
+_Note that tags have to be defined functions. To make life a little easier I've added a global defenition for html so it won't throw undefined errors at you._
+
 ---
 
 ## How does it work?
