@@ -1,6 +1,6 @@
 {
   "name": "mini-site-generator",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "A marvelously minimal static site generator.",
   "keywords": [
     "static",

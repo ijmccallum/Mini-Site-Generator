@@ -190,8 +190,15 @@ function stepIntoDir(dir, siteConfig){
 
 //stop the string template literal html tag from throwing an undefined
 if (typeof html == 'undefined') {
-    html = function(i){
-        return String(i);
+    html = function(strings, ...keys){
+        let returnString = '';
+        strings.forEach(function(str, i){
+            returnString += str;
+            if (typeof keys[i] !== 'undefined') {
+                returnString += keys[i];
+            }
+        });
+        return returnString;
     }
 }
 
