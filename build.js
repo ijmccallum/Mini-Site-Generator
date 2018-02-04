@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 const minify = require('html-minifier').minify;
 const minOps = {collapseWhitespace: true};
 const filters = ['node_modules'];
@@ -15,8 +16,9 @@ function testPut(put, label){
 for (let j = 0; j < process.argv.length; j++) {  
     //if we find an -io, the next 2 args should be for us! input output!
     if (process.argv[j] == '-io') {
-        var input = testPut(process.argv[j + 1], 'input');
-        var output = testPut(process.argv[j + 2], 'output');
+        
+        var input = makePathAbsolute(testPut(process.argv[j + 1], 'input'));
+        var output = makePathAbsolute(testPut(process.argv[j + 2], 'output'));
         puts.push({
             in: input,
             out: output
@@ -103,7 +105,7 @@ function filterContents(items, filters){
 function contentAddresses(dir, items){
     var returnAdds = [];
     items.forEach(function(item){
-        returnAdds.push(dir + item + '');
+        returnAdds.push(path.resolve(dir, item));
     });
     return returnAdds;
 }
@@ -131,6 +133,11 @@ function srcToDistAddress(srcAddress, siteConfig){
 function generateMarkup(pageAddress){
     var generator = require(pageAddress);
     return minify(generator(), minOps);
+}
+
+function makePathAbsolute(relativePath){
+    const absPath = path.resolve(relativePath);
+    return absPath;
 }
 
 //=================================================== Leaving pure functions behind now

@@ -1,6 +1,6 @@
 {
   "name": "mini-site-generator",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A marvelously minimal static site generator.",
   "keywords": [
     "static",
@@ -20,7 +20,7 @@
     "url": "https://github.com/ijmccallum/Mini-Site-Generator"
   },
   "scripts": {
-    "build": "node build.js -io ./docs/ ./docs/ -io ./example2/src/ ./example2/dist/"
+    "testbuild": "node build.js -io ./docs/ ./docs/ -io ./example2/src/ ./example2/dist/"
   },
   "bin": {
     "msg": "./bin/msg"
