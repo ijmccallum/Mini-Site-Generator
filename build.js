@@ -177,13 +177,16 @@ function stepIntoDir(dir, siteConfig){
     var dirContents = filterContents(contents(dir), filters);
 
     var pageList = pages(dirContents);
+
+    if (pageList.length > 0) {
+        ensureFolderAddress(srcToDistAddress(dir, siteConfig));
+    }
     var pageAddressList = contentAddresses(dir, pageList);
     buildPages(pageAddressList, siteConfig);
 
     var fullAddressList = contentAddresses(dir, dirContents);
     var folderAddressList = folders(fullAddressList);
     folderAddressList.forEach(function(folderAddress){
-        ensureFolderAddress(srcToDistAddress(folderAddress, siteConfig));
         stepIntoDir(folderAddress, siteConfig);
     });
 };
