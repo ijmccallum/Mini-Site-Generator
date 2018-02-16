@@ -2,12 +2,14 @@
     --black: #222222;
     --white: #ffffff;
     --yellow: #f7df1e;
+    --yellow-dark: #bdaf05;
     --blue: #12223f;
 }
 
 .clr-yellow { color: var(--yellow); }
 .clr-white { color: var(--white); }
 .clr-black { color: var(--black); }
+.clr-yellow-dark { color: var(--yellow-dark); }
 .bg-yellow { background-color: var(--yellow); }
 .bg-white { background-color: var(--white); }
 .bg-black { background-color: var(--black); }
