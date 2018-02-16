@@ -2,6 +2,7 @@
     --black: #222222;
     --white: #ffffff;
     --yellow: #f7df1e;
+    --blue: #12223f;
 }
 
 .clr-yellow { color: var(--yellow); }
@@ -10,6 +11,7 @@
 .bg-yellow { background-color: var(--yellow); }
 .bg-white { background-color: var(--white); }
 .bg-black { background-color: var(--black); }
+.bg-blue { background-color: var(--blue); }
 .fill-yellow { fill: var(--yellow); }
 .fill-white { fill: var(--white); }
 .fill-black { fill: var(--black); }
