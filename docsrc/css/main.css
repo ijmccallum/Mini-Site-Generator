@@ -1,0 +1,6 @@
+@import "base/normalize.css";
+@import "base/typography.css";
+
+body { font-family: 'Bungee', cursive; }
+.screen-height { height: 100vh; }
+.text-center { text-align: center; }

@@ -20,12 +20,26 @@
     "url": "https://github.com/ijmccallum/Mini-Site-Generator"
   },
   "scripts": {
-    "testbuild": "node build.js -io ./docs/ ./docs/ -io ./example2/src/ ./example2/dist/"
+    "start": "run-p start:server start:watch",
+    "start:server": "http-server ./docs/",
+    "start:watch": "node bin/watch.js",
+    "build:markup": "node build.js -io ./docsrc/ ./docs/",
+    "build:css": "postcss --use postcss-import postcss-custom-media autoprefixer cssnano -o docs/main.css docsrc/css/main.css --no-map"
   },
   "bin": {
     "msg": "./bin/msg"
   },
   "dependencies": {
     "html-minifier": "^3.5.8"
+  },
+  "devDependencies": {
+    "cssnano": "^3.10.0",
+    "http-server": "^0.11.1",
+    "npm-run-all": "^4.1.2",
+    "postcss": "^6.0.18",
+    "postcss-cli": "^5.0.0",
+    "postcss-cssnext": "^3.1.0",
+    "postcss-custom-media": "^6.0.0",
+    "postcss-import": "^11.1.0"
   }
 }
