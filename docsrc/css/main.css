@@ -1,6 +1,17 @@
+@import "abstracts/color.css";
 @import "base/normalize.css";
 @import "base/typography.css";
+@import "base/svg-icon.css";
 
-body { font-family: 'Bungee', cursive; }
+
+body { font-family: 'Bungee', cursive;  }
 .screen-height { height: 100vh; }
 .text-center { text-align: center; }
+.v-center { vertical-align: middle; }
+span.v-center { display: inline-block; }
+.center-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
