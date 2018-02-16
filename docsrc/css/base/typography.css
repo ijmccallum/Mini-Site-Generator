@@ -2,3 +2,10 @@ h1 {
     font-size: 2em;
     margin: 0;
 }
+
+.inline-code {
+    padding: 4px 8px;
+    border-radius: 4px;
+    background: var(--grey);
+    font-size: 16px;
+}

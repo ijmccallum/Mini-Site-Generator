@@ -3,6 +3,7 @@
     --white: #ffffff;
     --yellow: #f7df1e;
     --blue: #12223f;
+    --grey: #eae9e9;
 }
 
 .clr-yellow { color: var(--yellow); }

@@ -4,9 +4,10 @@
 @import "base/svg-icon.css";
 
 
-body { font-family: 'Bungee', cursive;  }
+body { font-family: 'Bungee', cursive; overflow-x: hidden; }
 .screen-height { height: 100vh; }
 .text-center { text-align: center; }
+.text-left { text-align: left; }
 .v-center { vertical-align: middle; }
 span.v-center { display: inline-block; }
 .center-section {
@@ -14,4 +15,10 @@ span.v-center { display: inline-block; }
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+.no-wrap { white-space: nowrap; }
+@media (max-width: 360px) {
+    .hide-small {
+        display: none;
+    }
 }
