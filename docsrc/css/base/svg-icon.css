@@ -5,3 +5,12 @@
     vertical-align: middle;
     margin: 17px 20px 20px 23px;
 }
+
+.dev-icon { /* a svg */
+    text-decoration: none;
+    width: 3em;
+    height: 1em;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0.5em;
+}
