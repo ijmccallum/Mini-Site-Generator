@@ -22,11 +22,12 @@ span.v-center { display: inline-block; }
         display: none;
     }
 }
-.fixed-top-right {
+.fixed-bottom-right {
     position: fixed;
-    top: 5px;
+    bottom: 26px;
     right: 10px;
 }
 .z-1 { z-index: 1; }
 .z-2 { z-index: 2; }
 .position-relative { position: relative; }
+.padding-30 { padding: 30px; }

@@ -42,12 +42,12 @@ module.exports = function(){
 </code></pre>
             </section>
 
-            <section class="screen-height center-section">
+            <section class="padding-30 center-section">
                 <code class="inline-code">npm install mini-site-generator</code>
             </section>
 
             <footer>
-                <div class="fixed-top-right z-1">
+                <div class="fixed-bottom-right z-1">
                     <a href="https://www.npmjs.com/package/mini-site-generator" alt="link to npm" class="dev-icon">
                         <svg viewBox="0 0 18 7">
                             <title>npm</title>
