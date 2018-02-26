@@ -27,6 +27,13 @@ span.v-center { display: inline-block; }
     bottom: 26px;
     right: 10px;
 }
+@media (min-width: 850px) {
+    .md-flex-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
 .z-1 { z-index: 1; }
 .z-2 { z-index: 2; }
 .position-relative { position: relative; }
