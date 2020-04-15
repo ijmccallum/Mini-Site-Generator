@@ -92,7 +92,7 @@ After:
 |  ├──fun.page.js
 ```
 
-_You can even run both: `msg -io ./src/ ./dist/ -io ./docs/ ./docs/`_
+You can even run both if you want to watch the world burn: `msg -io ./src/ ./dist/ -io ./docs/ ./docs/`
 
 ---
 
